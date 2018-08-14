@@ -40,7 +40,7 @@ def callback_handling():
 
 @app.route('/login')
 def login():
-    return auth0.authorize_redirect(redirect_uri='YOUR_CALLBACK_URL', audience='https://YOUR_AUTH0_DOMAIN/userinfo')
+    return auth0.authorize_redirect(redirect_uri='https://gigdb.herokuapp.com/callback', audience='https://gigdb.auth0.com/userinfo')
 
 def requires_auth(f):
   @wraps(f)
