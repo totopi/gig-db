@@ -5,7 +5,8 @@ from functools import wraps
 import os
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = os.environ['MONGODB_URI']
+app.config['MONGO_URI'] = os.environ['MONGODB_URI']
+app.config['SECRET_KEY'] = os.environ['AUTH_SECRET']
 mongo = PyMongo(app)
 oauth = OAuth(app)
 
