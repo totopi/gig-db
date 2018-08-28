@@ -5,22 +5,22 @@ from functools import wraps
 import os
 
 app = Flask(__name__)
-# app.config['MONGO_URI'] = os.environ['MONGODB_URI']
-# app.config['SECRET_KEY'] = os.environ['AUTH_SECRET']
-# mongo = PyMongo(app)
-# oauth = OAuth(app)
+app.config['MONGO_URI'] = os.environ['MONGODB_URI']
+app.config['SECRET_KEY'] = os.environ['AUTH_SECRET']
+mongo = PyMongo(app)
+oauth = OAuth(app)
 
-# auth0 = oauth.register(
-#     'auth0',
-#     client_id=os.environ['AUTH_CLIENT'],
-#     client_secret=os.environ['AUTH_SECRET'],
-#     api_base_url='https://gigdb.auth0.com',
-#     access_token_url='https://gigdb.auth0.com/oauth/token',
-#     authorize_url='https://gigdb.auth0.com/authorize',
-#     client_kwargs={
-#         'scope': 'openid profile',
-#     },
-# )
+auth0 = oauth.register(
+    'auth0',
+    client_id=os.environ['AUTH_CLIENT'],
+    client_secret=os.environ['AUTH_SECRET'],
+    api_base_url='https://gigdb.auth0.com',
+    access_token_url='https://gigdb.auth0.com/oauth/token',
+    authorize_url='https://gigdb.auth0.com/authorize',
+    client_kwargs={
+        'scope': 'openid profile',
+    },
+)
 
 # Here we're using the /callback route.
 @app.route('/callback')
