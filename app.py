@@ -43,6 +43,10 @@ def callback_handling():
 def login():
     return auth0.authorize_redirect(redirect_uri='https://gigdb.herokuapp.com/callback', audience='https://gigdb.auth0.com/userinfo')
 
+@app.route('/dashboard')
+def dashboard():
+    return render_template("index2.html")
+
 def requires_auth(f):
   @wraps(f)
   def decorated(*args, **kwargs):
