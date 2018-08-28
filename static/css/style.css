@@ -1,12 +1,14 @@
 .grid-container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 100px 780px 50px;
-    grid-gap: 5px;
+    grid-template-rows: 150px 
+                        1fr 
+                        100px;
     grid-template-areas:
         "h h h h h h"
         "m c c c c c"
-        "f f f f f f" 
+        "f f f f f f";
+    min-height: 98vh;
 }
 
 .header {
@@ -40,7 +42,7 @@
     background-color: #aa8800
 }
 
-.main{
+/* .main{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,4 +56,4 @@
 .main .body {
     border-style: solid;
     margin-top: 10px;
-}
+} */
